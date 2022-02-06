@@ -1,0 +1,31 @@
+/*----------------------------------------
+ * Colors
+ *----------------------------------------*/
+@each $name, $color in $colors {
+    @include semanticAttribute(
+        ".color-#{$name}",
+        "color",
+        $color
+    );
+
+    .ui.color-#{$name} .statistics .statistic {
+        > .value,
+        > .label {
+            color: $color!important;
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include semanticAttribute(
+        ".bg-color-#{$name}",
+        "background-color",
+        $color
+    );
+
+    @include semanticAttribute(
+        ".bg-color-#{$name}.glass",
+        "background-color",
+        rgba($color, .9)
+    );
+}

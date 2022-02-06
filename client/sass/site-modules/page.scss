@@ -1,0 +1,62 @@
+/*----------------------------------------
+ * Page
+ *----------------------------------------*/
+#page {
+    position: relative;
+    min-height: 90vh;
+
+    .page-title {
+        text-align: center;
+        font-size: $display3;
+        color: $primary;
+    }
+
+    &-header {
+        padding-top: $menuHeight;
+    }
+
+    &-footer {
+        height: 10vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(100%);
+        max-width: $wrapper1;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .social-menu {
+            &.round > * {
+                background-color: $secondary;
+                color: $white;
+
+                &:hover {
+                    background-color: darken($primary, 10%);
+                }
+            }
+        }
+    }
+
+    &-content {
+        .loader,
+        .loader-small {
+            position: static;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $mediaSmall){
+    #page {
+        .page-title {
+            font-size: 3.5rem;
+        }
+
+        &-footer {
+            justify-content: center;
+        }
+    }
+}
